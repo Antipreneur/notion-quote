@@ -216,7 +216,7 @@
                 if (mode) changeMode(mode);
 
                 size = parseFloat(localStorage.getItem('size'), 2) || 0.9;
-                setSize(size);
+                setSize(0.8);
             }
 
             function changeFont(value) {
@@ -232,7 +232,7 @@
             function changeSize(value) {
                 size = value == "plus" ? size + 0.1 : size - 0.1;
                 size = parseFloat(size.toFixed(2))
-                setSize(size);
+                setSize(0.8);
             }
 
             function setSize(value) {
