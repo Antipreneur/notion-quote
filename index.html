@@ -35,7 +35,7 @@
         }
         
         cite {
-            font-size: 65%;
+            font-size: 70%;
             font-weight: 500;
             font-style: normal;
         }
@@ -215,8 +215,8 @@
                 const mode = localStorage.getItem('mode');
                 if (mode) changeMode(mode);
 
-                size = parseFloat(localStorage.getItem('size'), 2) || 1.2;
-                setSize(1.2);
+                size = parseFloat(localStorage.getItem('size'), 2) || 1.1;
+                setSize(1.1);
             }
 
             function changeFont(value) {
@@ -232,7 +232,7 @@
             function changeSize(value) {
                 size = value == "plus" ? size + 0.1 : size - 0.1;
                 size = parseFloat(size.toFixed(2))
-                setSize(1.2);
+                setSize(1.1);
             }
 
             function setSize(value) {
