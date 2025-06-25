@@ -197,18 +197,19 @@
                 }
 
             }
-            async function updateQuoteCustom(f) {
-                const response = await fetch(f);
-                const data = await response.json();
-                if (response.ok && data.length > 0) {
-                    random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
-                    quote_text.textContent = random_quote.content;
-                    cite.textContent = random_quote.author;
-                } else {
-                    quote_text.textContent = "An error occured";
-                    console.log(data);
-                }
-            }
+async function updateQuoteCustom(f) {
+    const response = await fetch(f);
+    const data = await response.json();
+    if (response.ok && data.length > 0) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        const random_quote = data[randomIndex];
+        quote_text.textContent = random_quote.content;
+        cite.textContent = random_quote.author;
+    } else {
+        quote_text.textContent = "An error occurred";
+        console.log(data);
+    }
+}
 
             function updateStyle() {
                 const font = localStorage.getItem('font') || 'sans';
